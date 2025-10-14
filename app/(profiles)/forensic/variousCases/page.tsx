@@ -86,7 +86,7 @@ export default function VariousPagesPage() {
         .case-container {
           min-height: 100vh;
           position: relative;
-          background-image: url('/imgVariousCases.png');
+          background-image: url('/imgForensicCases.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
