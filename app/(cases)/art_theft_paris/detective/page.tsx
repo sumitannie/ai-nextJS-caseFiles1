@@ -338,9 +338,12 @@ export default function ArtTheftParisPage() {
         const response = await axios.post<StoryData>(
           "http://localhost:8000/api/detective-story",
           {
-            case: "art_theft_paris",
+            seatNumber:"G24",
+            sourceStation:"Howrah"
           }
         );
+
+        // fetch("http://localhost:8000/api/detective-story")
         setStoryData(response.data);
         setStoryName(response.data.story.title);
       } catch (error) {

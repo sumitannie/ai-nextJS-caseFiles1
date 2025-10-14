@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import Link from "next/link"
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function AIProfilerPage() {
@@ -8,7 +8,11 @@ export default function AIProfilerPage() {
   return (
     <>
       <div className="role-page">
-        <img src="/images/ai_profiler.png" alt="AI Profiler" className="role-image" />
+        <img
+          src="/images/ai_profiler.png"
+          alt="AI Profiler"
+          className="role-image"
+        />
 
         <div className="role-box">
           <h2>AI PROFILER</h2>
@@ -17,7 +21,7 @@ export default function AIProfilerPage() {
             <br />
             Generate suspect profiles.
           </p>
-          <Link href="/ai-profiler-game" className="start-role-btn">
+          <Link href="/ai-profiler/variousProfiles" className="start-role-btn">
             Start Profiling
           </Link>
         </div>
@@ -35,7 +39,7 @@ export default function AIProfilerPage() {
       <style jsx>{`
         body {
           margin: 0;
-          font-family: 'Courier New', monospace;
+          font-family: "Courier New", monospace;
           background-color: #0b0b2e;
           color: white;
           text-align: center;
@@ -115,5 +119,5 @@ export default function AIProfilerPage() {
         }
       `}</style>
     </>
-  )
+  );
 }

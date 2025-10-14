@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -74,7 +74,7 @@ export default function AIProfilerParis() {
           "Profiler confidence index: 88%.",
         ],
         options: [],
-      },
+      },                              
     ],
   };
 
@@ -138,11 +138,9 @@ export default function AIProfilerParis() {
       </div>
 
       {/* MAIN CARD */}
-      <motion.div
+      <div
         key={scene.id}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        
       >
         <Card className="bg-slate-800/70 border border-slate-700 shadow-lg backdrop-blur-sm mb-6">
           <CardContent className="p-6 space-y-4">
@@ -180,7 +178,7 @@ export default function AIProfilerParis() {
             )}
           </CardContent>
         </Card>
-      </motion.div>
+      </div>
 
       {/* STATUS FOOTER */}
       <div className="mt-auto text-xs text-gray-500 text-center">

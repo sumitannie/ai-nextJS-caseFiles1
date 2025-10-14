@@ -57,7 +57,7 @@ const forensicCaseFile = {
   ]
 }
 
-const sceneData = [
+const sceneData:any = [
   {
     scene_id: "scene_1_intake",
     narration: "The forensic unit has received three evidence bags from Blackwood Manor, the site of Lord Blackwood's apparent suicide. The detective on scene, however, reports inconsistencies. Your task is to analyze the physical evidence to determine the true nature of the events. The chain of custody is secure, and initial processing can begin.",
@@ -116,7 +116,7 @@ export default function CountrysideManorPage() {
     new Promise(resolve => setTimeout(resolve, 1000)).then(() => setIsLoading(false));
   }, [])
 
-  const currentSceneData = sceneData.find((scene) => scene.scene_id === currentScene)
+  const currentSceneData = sceneData.find((scene:any) => scene.scene_id === currentScene)
 
   const handleOptionClick = (option: any) => {
     if (currentSceneData?.analysis) {
@@ -224,7 +224,7 @@ export default function CountrysideManorPage() {
                 <span className="icon">🔍</span>
                 <h3>Exhibits Logged</h3>
               </div>
-              {currentSceneData.exhibits.map((exhibit, index) => (
+              {currentSceneData.exhibits.map((exhibit:any, index:number) => (
                 <div key={index} className="clue-item">
                   <div className="clue-header">
                     <strong className="clue-name">{exhibit.name.toUpperCase()}</strong>
@@ -260,7 +260,7 @@ export default function CountrysideManorPage() {
               <h3>Your Next Action</h3>
             </div>
             <div className="options-grid">
-              {currentSceneData.options.map((option, index) => (
+              {currentSceneData.options.map((option:any, index:number) => (
                 <button
                   key={index}
                   className="option-btn"
