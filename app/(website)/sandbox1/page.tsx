@@ -6,6 +6,11 @@ import { useState } from "react"
 export default function Sandbox1Page() {
   const [isRealistic, setIsRealistic] = useState(false)
 
+  const [sandboxData, setSandboxData] = useState({
+    useQuery:"",
+    difficulty:"EASY"
+  })
+
   
 
   return (

@@ -363,20 +363,34 @@ export default function CyberLondonPage() {
   useEffect(() => {
     const fetchCaseData = async () => {
       setIsLoading(true);
+      try {
+        // This will fail, causing the catch block to run and use fallbackData
+        const response = await axios.post(
+          "http://localhost:8000/api/detective-story",
+          {
+            prompt: "string",
+          }
+        );
+
+        // fetch("http://localhost:8000/api/detective-story")
+        setCaseData(response.data);
+        // setStoryName(response.data.story.title);
+      } catch (error) {
+        console.warn("API call failed. Using fallback mock data.", error);
+        setCaseData(story);
+        // setStoryName(fallbackData.story.title);
+      } finally {
+        setTimeout(() => setIsLoading(false), 700); // Simulate network delay
+      }
+
       // Simulate API delay
       // await new Promise((resolve) => setTimeout(resolve, 1000))
       //    http://127.0.0.1:8000 /api/detective-story
-      const response = await axios.post(
-        "http://localhost:8000/api/detective-story",
-        {
-          prompt: "string",
-        }
-      );
 
-      console.log("API response:", response.data);
+      // console.log("API response:", response.data);
 
-      setCaseData(story);
-      setIsLoading(false);
+      // setCaseData(story);
+      // setIsLoading(false);
     };
 
     fetchCaseData();
